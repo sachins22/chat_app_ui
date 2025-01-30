@@ -3,8 +3,10 @@ import 'package:messanger_app/domain/constants/app_colors.dart';
 
 class UiHelper {
   // Image container
-  static CustomImage({required String imgUrl,double ? Height, double ? Width}) {
-    return Image.asset('assets/images/$imgUrl', width:Width ,height: Height,);
+  static CustomImage({required String imgUrl,double ? Height, double ? Width , double ? radius}) {
+    return ClipRRect(
+      borderRadius: BorderRadius.all(Radius.circular(radius ?? 0)),
+      child: Image.asset('assets/images/$imgUrl', width:Width ,height: Height, ));
   }
 
   // text container
@@ -59,6 +61,7 @@ class UiHelper {
     required TextEditingController controller,
     required String text,
     required TextInputType textinputType,
+    required IconData icondata
   }) {
     return Container(
       height: 45,
@@ -76,6 +79,7 @@ class UiHelper {
           keyboardType: textinputType,
           decoration: InputDecoration(
               hintText: text,
+              prefixIcon: Icon(icondata , color: AppColors.iconColors,),
               hintStyle: TextStyle(
                   color: Theme.of(context).brightness == Brightness.dark
                       ? AppColors.HinttextdarkMode

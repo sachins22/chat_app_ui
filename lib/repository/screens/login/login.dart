@@ -49,6 +49,7 @@ class LoginScreens extends StatelessWidget {
             UiHelper.CustomTextFeild(
                 context: context,
                 controller: phoneNumberController,
+                icondata: Icons.phone_android_rounded,
                 text: 'Phone Number',
                 textinputType: TextInputType.number)
           ],

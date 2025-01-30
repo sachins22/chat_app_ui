@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:messanger_app/domain/constants/app_colors.dart';
+import 'package:messanger_app/repository/screens/bottomNav/bottomNav.dart';
 import 'package:messanger_app/repository/widgets/uihelper.dart';
 
 class ProfileScreens extends StatefulWidget {
@@ -22,7 +23,8 @@ class _ProfileScreensState extends State<ProfileScreens> {
   }
 
   void saveProfile() {
-    // Handle save logic here
+    Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (context) => const BottomnavScreens()));
   }
 
   @override
@@ -58,6 +60,7 @@ class _ProfileScreensState extends State<ProfileScreens> {
             UiHelper.CustomTextFeild(
               context: context,
               controller: firstNameController,
+              icondata: Icons.person_2_rounded,
               text: 'First Name (Required)',
               textinputType: TextInputType.name,
             ),
@@ -65,6 +68,7 @@ class _ProfileScreensState extends State<ProfileScreens> {
             UiHelper.CustomTextFeild(
               context: context,
               controller: lastNameController,
+              icondata: Icons.person_2_rounded,
               text: "Last Name (Required)",
               textinputType: TextInputType.name,
             ),
