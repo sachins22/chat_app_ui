@@ -4,6 +4,7 @@ import 'package:messanger_app/domain/constants/apptheme.dart';
 import 'package:messanger_app/domain/constants/cubits/themeCubits.dart';
 import 'package:messanger_app/domain/constants/cubits/themeState.dart';
 import 'package:messanger_app/repository/screens/onboarding/onbaordingScreen.dart';
+import 'package:messanger_app/repository/screens/splash/splash.dart';
 
 void main() {
   runApp(BlocProvider(
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
         return  MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: state is LightThemeStates ? Appthemes.lightTheme : Appthemes.darkTheme,
-          home:const Onbaordingscreens());
+          home:const SplashPages());
       },
     );
   }
