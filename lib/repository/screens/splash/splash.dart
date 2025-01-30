@@ -9,10 +9,19 @@ class SplashPages extends StatefulWidget {
 }
 
 class _SplashPagesState extends State<SplashPages> {
+  // Method to handle the navigation after the splash screen delay
   Future<void> _splashnext() async {
-    Future.delayed(const Duration(seconds: 3));
+    await Future.delayed(const Duration(seconds: 3)); // Await the delay
     Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) =>const Onbaordingscreens()));
+      context,
+      MaterialPageRoute(builder: (context) => const Onbaordingscreens()), // Navigate after delay
+    );
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _splashnext(); // Call the splashnext function when the screen is loaded
   }
 
   @override
